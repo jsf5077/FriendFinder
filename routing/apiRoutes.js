@@ -1,3 +1,4 @@
+var path = require("path");
 // Routes
 // =============================================================
 
@@ -11,7 +12,8 @@ app.get("/api/friends", function(req, res) {
   });
 
   // Create New Characters - takes in JSON input
-app.post("/api/friends", function(req, res) {
+module.exports = function (app) {
+  app.post("/api/friends", function(req, res) {
     // req.body hosts is equal to the JSON post sent from the user
     var newFriend = req.body;
   
@@ -24,3 +26,4 @@ app.post("/api/friends", function(req, res) {
   
     res.json(newFriend);
   });
+}
