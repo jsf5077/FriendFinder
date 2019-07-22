@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 
 <html lang="en-us">
-
   <head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <!-- Added a link to Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!--Linking css file-->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-     <!-- viewport meta tag -->
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <title>Friend Finder</title>
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"/>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
-   <h1>Home Page</h1>
-
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Script -->
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <div class="container">
+      <div class="jumbotron">
+        <h1><i class="fa fa-facebook-square" aria-hidden="true"></i> Friend Finder</h1>
+        <hr>
+        <h2>Answer a few basic questions.</h2>
+        <h2>Then find the friend with the greatest compatibility!</h2>
+        <br>
+  
+        <div>
+          <a href="survey.html"><button type="button" class="btn btn-lg btn-primary"><h4><span class="glyphicon glyphicon-list-alt"></span> Go to Survey</h4></button></a>
+        </div>
+  
+      </div>
+    </div>
+    <hr>
+    <footer class="footer">
+      <div class="container">
+        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/jsf5077/FriendFinder">GitHub Repo</a></p>
+      </div>
+    </footer>
+    
   </body>
-
 </html>
