@@ -1,3 +1,4 @@
+// DATA
 var friends = [{
     "name":"Nathan",
     "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
@@ -8,4 +9,4 @@ var friends = [{
     "scores":[ 3, 2, 4, 4, 5, 3, 2, 2, 4, 4]
   }];
   
-  module.export = friends; 
+  module.exports = friends; 
