@@ -4,15 +4,24 @@
     <meta charset="UTF-8" />
     <title>FriendFinder</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    />
 
     <script src="https://code.jquery.com/jquery.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+    />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css"
+    />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
   </head>
@@ -164,4 +173,40 @@
       </footer>
     </div>
   </body>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+      $("#submit").click(function(){
+        var newFriend;
+        var qResults = [];
+        var allAnswered = false;
+        if( !$("#name").val() || !$("#photo").val()) {
+          alert("INVALID ENTRY! Please be sure you have entered a name a photo link entered.");
+        } else {
+        
+          $.each($(".chosen-select option:selected"), function(){
+            qResults.push($(this).val());
+          });
+          for (i = 0; i < qResults.length; i++) {
+            if(qResults[i] == "") {
+              alert("Please make sure all fields are entered");
+              return;
+            }
+            allAnswered = true;
+            console.log(allAnswered);
+            if (allAnswered == true) {
+              newFriend = {
+              name: $("#name").val(),
+              photo: $("#photo").val(),
+              scores: qResults
+              };
+              console.log(newFriend);
+              $.post("/api/friends", newFriend);
+            };
+            return;
+          };
+        }
+      });
+    });
+  </script>
 </html>

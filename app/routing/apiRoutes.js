@@ -1,3 +1,4 @@
+var path =require("path");
 // LOAD DATA
 var friends = require("../data/friends.js");
 
