@@ -42,11 +42,11 @@ module.exports = function(app) {
         match.diff = totalDiff;
         console.log(currentFriend.name + " is the new current match");
       }
-      console.log(match.diff + "\n");
-      
+      console.log(match.diff + "\n");      
     };
-    console.log(match);
+    // console.log(match);
     friends.push(newFriend);
-    console.log(friends);
+    // console.log(friends);
+    res.json(match);
   });
 };

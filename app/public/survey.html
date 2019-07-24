@@ -174,21 +174,21 @@
     </div>
   </body>
   <script type="text/javascript">
-
     $(document).ready(function() {
-      $("#submit").click(function(){
+      $("#submit").click(function() {
         var newFriend;
         var qResults = [];
         var allAnswered = false;
-        if( !$("#name").val() || !$("#photo").val()) {
-          alert("INVALID ENTRY! Please be sure you have entered a name a photo link entered.");
+        if (!$("#name").val() || !$("#photo").val()) {
+          alert(
+            "INVALID ENTRY! Please be sure you have entered a name a photo link entered."
+          );
         } else {
-        
-          $.each($(".chosen-select option:selected"), function(){
+          $.each($(".chosen-select option:selected"), function() {
             qResults.push($(this).val());
           });
           for (i = 0; i < qResults.length; i++) {
-            if(qResults[i] == "") {
+            if (qResults[i] == "") {
               alert("Please make sure all fields are entered");
               return;
             }
@@ -196,15 +196,18 @@
             console.log(allAnswered);
             if (allAnswered == true) {
               newFriend = {
-              name: $("#name").val(),
-              photo: $("#photo").val(),
-              scores: qResults
+                name: $("#name").val(),
+                photo: $("#photo").val(),
+                scores: qResults
               };
-              // console.log(newFriend);
-              $.post("/api/friends", newFriend);
-            };
+
+              $.post("/api/friends", newFriend, function(data) {
+                console.log(data.name);
+              });
+            }
             return;
-          };
+          }
+          // console.log(newFriend);
         }
       });
     });
