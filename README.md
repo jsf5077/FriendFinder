@@ -35,4 +35,4 @@ This application works with four different javascript applications.
 
 ## Authors
 
-* **Jeff Froehlich** - *Initial work* - [PurpleBooth](https://github.com/jsf5077)
+* **Jeff Froehlich** - *Initial work* - [Github Repo](https://github.com/jsf5077)
