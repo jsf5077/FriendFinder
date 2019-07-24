@@ -21,19 +21,19 @@ This application works with four different javascript applications.
 
 * Server.js
 
-this script creates the connections necessary between scripts to make the application function. Express used
+   This script creates the connections necessary between scripts to make the application function. Express used
 
 * Friends.js
 
-This script assumes the role of the database containing the friends array. 
+    This script assumes the role of the database containing the friends array. 
 
 * apiRoutes.js
 
-This script is crucial as this is the script that holds the algorithm to process the best match from the friends array to the users input data.
+    This script is crucial as this is the script that holds the algorithm to process the best match from the friends array to the users     input data.
 
 * htmlRoutes.js
 
-This script handles the connections of the html pages 
+    This script handles the connections of the html pages 
 
 
 ## Built With
