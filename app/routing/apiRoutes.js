@@ -10,15 +10,15 @@ module.exports = function(app) {
   });
   app.post("/api/friends", function(req, res) {
     var newFriend = req.body
-    // console.log(newFriend);
+     
     var newScore = [];
     for (i=0; i<newFriend.scores.length; i++) {
       var newNum = newFriend.scores[i];
       newScore[i] = parseInt(newNum);
     }
     newFriend.scores = newScore;
-    console.log(newScore);
-    console.log(friends[0].scores);
+    // console.log(newScore);
+    // console.log(friends[0].scores);
 
     var match = {
       name:"",
@@ -26,10 +26,11 @@ module.exports = function(app) {
       diff: 250
     };
 
+    //the function that runs through the friends array and find the best match
     for (i = 0; i < friends.length; i++) {
         var currentFriend = friends[i]
         var totalDiff = 0;
-        // console.log(currentFriend)
+ 
         console.log("checking "+currentFriend.name);
 
       for (j = 0; j < currentFriend.scores.length; j++) {
@@ -44,9 +45,9 @@ module.exports = function(app) {
       }
       console.log(match.diff + "\n");      
     };
-    // console.log(match);
+     //pushed the new entry to the friends array
     friends.push(newFriend);
-    // console.log(friends);
+     //sends match info back to the survey
     res.json(match);
   });
 };
