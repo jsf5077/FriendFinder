@@ -19,19 +19,19 @@ On the survey page, you will be asked to enter your name and add a link to a pho
 
 This application works with four different javascript applications.
 
-### Server.js
+* Server.js
 
 this script creates the connections necessary between scripts to make the application function. Express used
 
-### Friends.js
+* Friends.js
 
 This script assumes the role of the database containing the friends array. 
 
-### apiRoutes.js
+* apiRoutes.js
 
 This script is crucial as this is the script that holds the algorithm to process the best match from the friends array to the users input data.
 
-### htmlRoutes.js
+* htmlRoutes.js
 
 This script handles the connections of the html pages 
 
