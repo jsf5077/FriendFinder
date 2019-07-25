@@ -207,7 +207,7 @@
             qResults.push($(this).val());
           });
           for (i = 0; i < qResults.length; i++) {
-            if (qResults[i] == "Please Make a Selection") {
+            if (qResults[i] == null) {
               $("#invalid").show();
               $("#invalid2").show();
               return;
