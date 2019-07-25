@@ -170,15 +170,17 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body row text-center">
-              <div>
-                <h2 id="matchName"></h2>
+            <div class="modal-body row text-center align-items-center">
+             <div class="container-fluid">
+                <div>
+                  <h2 id="matchName"></h2>
+                </div>
+                <hr>
+                <div>
+                  <img style="max-width: 100%;" class="img-rounded ml-auto col-3" id = "matchPhoto" src="" alt="Best friend has no face">
+                </div>
               </div>
-              <hr>
-              <div>
-                <img class="img-rounded img-responsive" id = "matchPhoto" src="" alt="Best friend has no face">
-              </div>
-            </div>
+             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
@@ -204,15 +206,28 @@
           return;
         } else {
           $.each($(".chosen-select option:selected"), function() {
-            qResults.push($(this).val());
+            if ($(this).val() == "") {
+              $("#invalid").show();
+              $("#invalid2").show()
+              allAnswered = false;
+              
+
+            } else {
+              qResults.push($(this).val());
+              allAnswered = true;
+            }
           });
           for (i = 0; i < qResults.length; i++) {
-            if (!qResults[i]) {
+            if (qResults.length !== 10) {
               $("#invalid").show();
               $("#invalid2").show();
-              return;
+              allAnswered = false;
+              console.log(allAnswered);
+              break;
             }
-            allAnswered = true;
+            console.log("still looping");
+            console.log(qResults);
+            // allAnswered = true;
             console.log(allAnswered);
             if (allAnswered == true) {
               newFriend = {
@@ -220,11 +235,11 @@
                 photo: $("#photo").val(),
                 scores: qResults
               };
-
+              console.log(newFriend);
               $.post("/api/friends", newFriend, function(data) {
                 $("#matchPhoto").attr("src", data.photo)
                 $("#matchName").text(data.name);
-                $("#ModalCenter").modal();
+                $("#ModalCenter").modal();  
               });
             }
             return;
