@@ -23,6 +23,7 @@
       <hr />
 
       <h3><strong>About You</strong></h3>
+      <h3 id="invalid" style="color: crimson">Error: Please be sure all fields are entered</h3>
       <h4>Name (Required)</h4>
       <input type="text" id="name" class="form-control" required />
 
@@ -143,13 +144,10 @@
 
       <br />
       <br />
+      <h3 id="invalid2" style="color: crimson">Error: Please be sure all fields are entered</h3>
 
       <!-- Submit Button -->
-      <button
-        type="submit"
-        class="btn btn-primary btn-lg btn-block"
-        id="submit"
-      >
+      <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
         <i class="fa fa-check-circle" aria-hidden="true"></i> Submit
       </button>
 
@@ -193,22 +191,25 @@
   </body>
   <script type="text/javascript">
     $(document).ready(function() {
+      $("#invalid").hide();
+      $("#invalid2").hide();
 
       $("#submit").click(function() {
         var newFriend;
         var qResults = [];
         var allAnswered = false;
         if (!$("#name").val() || !$("#photo").val()) {
-          alert(
-            "INVALID ENTRY! Please be sure you have entered a name a photo link entered."
-          );
+          $("#invalid").show();
+          $("#invalid2").show();
+          return;
         } else {
           $.each($(".chosen-select option:selected"), function() {
             qResults.push($(this).val());
           });
           for (i = 0; i < qResults.length; i++) {
             if (qResults[i] == "") {
-              alert("Please make sure all fields are entered");
+              $("#invalid").show();
+              $("#invalid2").show();
               return;
             }
             allAnswered = true;
@@ -223,11 +224,12 @@
               $.post("/api/friends", newFriend, function(data) {
                 $("#matchPhoto").attr("src", data.photo)
                 $("#matchName").text(data.name);
-                $("#ModalCenter").modal();
+                // $("#ModalCenter").modal();
               });
             }
             return;
           }
+          $("#ModalCenter").modal();
         }
       });
     });
