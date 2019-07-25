@@ -207,7 +207,7 @@
             qResults.push($(this).val());
           });
           for (i = 0; i < qResults.length; i++) {
-            if (qResults[i] == null) {
+            if (!qResults[i]) {
               $("#invalid").show();
               $("#invalid2").show();
               return;
