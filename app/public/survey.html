@@ -224,12 +224,11 @@
               $.post("/api/friends", newFriend, function(data) {
                 $("#matchPhoto").attr("src", data.photo)
                 $("#matchName").text(data.name);
-                // $("#ModalCenter").modal();
+                $("#ModalCenter").modal();
               });
             }
             return;
           }
-          $("#ModalCenter").modal();
         }
       });
     });
