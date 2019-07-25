@@ -13,7 +13,7 @@ var friends = [{
     "scores":[ 3, 2, 5, 4, 5, 5, 2, 2, 4, 5]
   }, {
     "name":"Chandler",
-    "photo":"https://www.google.com/search?q=Chandler+Bing&sa=X&rlz=1C1CHBF_enUS776US776&stick=H4sIAAAAAAAAAONQFuLUz9U3MKzIMI5XAjON05IqTE8xIoSR2OZQtnFacropnI1QD2TnmcDZOUZFpxi5QGyTEtO8nFxkTtovRiG3oszUvJRiBeeMxKLE5JLUouJFrLxATl5KTmqRglNmXjoAOF5Gap8AAAA&biw=1280&bih=870&sxsrf=ACYBGNQOVstkz-kLcW51L7DBNXeBdDvYpQ:1563935103984&tbm=isch&source=iu&ictx=1&fir=VTE-vgeg5qaLiM%253A%252CQF1IdKwtjfko_M%252C%252Fm%252F03fbx5&vet=1&usg=AI4_-kRj_-snpao5bseM3sGbqSlaxfvlqw&ved=2ahUKEwiTi8yiwMzjAhUNT98KHZ9_DSEQ_B0wHXoECAkQAw#imgrc=V35zy8LVrp9J_M:&vet=1",
+    "photo":"https://pbs.twimg.com/profile_images/378800000040987447/4464131179ce9435f81942cd7fbaa8cf_400x400.jpeg",
     "scores":[ 1, 1, 4, 4, 2, 2, 3, 3, 5, 5]
   }, {
     "name":"Monica",
