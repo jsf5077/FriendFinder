@@ -5,7 +5,7 @@ Friend Finder is the state of the art application to help you find a new friend.
 ##Deployment
 
 This application is deployed on Heroku.
-link: 
+link: https://floating-castle-92245.herokuapp.com/
 
 ## Home Page
 
